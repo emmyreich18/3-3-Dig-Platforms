@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pattern Party – pattern generator</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@2.0.3/lib/p5.min.js"></script>
+  <script src="sketch.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 32px;
+      background: #f4f4f0;
+      color: #1b1b3a;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    main { max-width: 960px; margin: 0 auto; }
+    h1 { font-size: 2.2rem; margin: 0 0 8px; }
+    h2 { font-size: 1.3rem; margin-top: 36px; }
+    p { max-width: 70ch; }
+
+    .tool {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+    canvas { display: block; max-width: 100%; height: auto; border-radius: 8px; }
+
+    #controls {
+      flex: 1;
+      min-width: 240px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .row { margin-bottom: 12px; }
+    .row label { display: block; font-size: 0.9rem; margin-bottom: 4px; }
+    .row input[type="range"], .row select { width: 100%; box-sizing: border-box; }
+    .row select { padding: 6px; font: inherit; }
+
+    .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .buttons button {
+      flex: 1;
+      padding: 10px;
+      font: inherit;
+      border: 2px solid #1b1b3a;
+      border-radius: 6px;
+      background: #fff;
+      color: #1b1b3a;
+      cursor: pointer;
+    }
+    .buttons button:last-child { background: #1b1b3a; color: #fff; }
+    .buttons button:focus-visible { outline: 3px solid #ff6f59; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Pattern Party</h1>
+    <p>A tool for making tile patterns. Pick a shape, change the controls, and download the pattern you like.</p>
+
+    <div class="tool">
+      <div id="sketch"></div>
+      <div id="controls"></div>
+    </div>
+
+    <h2>The rules</h2>
+    <p>Every pattern is a square grid of tiles. Each tile holds one shape drawn from its center. Shapes only turn in quarter turns, and all the colors come from one four-color palette. These rules stay the same, so every pattern looks like part of the same family.</p>
+
+    <h2>The parameters</h2>
+    <p>You can change the shape, how many tiles are in each row, the shape size, the line thickness, the number of petals or rings, how the tiles turn, how the colors are placed, whether the tile backgrounds are filled, and the four colors. "Shuffle" rerolls the random choices while keeping your settings. "Surprise me" picks random values within ranges I chose, using color sets I picked so the results still look good.</p>
+  </main>
+</body>
+</html>
